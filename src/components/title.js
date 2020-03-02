@@ -1,12 +1,11 @@
 import './title.scss';
 import { createElement } from '../lib/dom';
 
-export function title() {
-  const titleAttributes = {
-    innerText: 'Pokedex-List',
+export function title(text) {
+  const element = createElement('h1', {
+    innerText: text,
     className: 'title'
-  };
-  const element = createElement('h1', titleAttributes);
+  });
 
   return element;
 }
