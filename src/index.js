@@ -1,5 +1,7 @@
 import './index.scss';
 
-import { pokemon } from './components/pokemon';
+import { title } from './components/title';
+import { search } from './components/search';
 
-document.body.appendChild(pokemon());
+document.body.appendChild(title('Pokedex-List'));
+document.body.appendChild(search());
