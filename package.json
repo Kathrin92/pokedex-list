@@ -1,9 +1,10 @@
 {
-  "name": "pokedex-list",
+  "name": "pokedex-2k20",
   "version": "1.0.0",
   "description": "Pokedex example",
   "private": true,
   "scripts": {
+    "build": "webpack",
     "test": "eslint src/**"
   },
   "repository": {
