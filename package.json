@@ -1,0 +1,20 @@
+{
+  "name": "pokedex-list",
+  "version": "1.0.0",
+  "description": "Pokedex example",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kathrin92/pokedex-list.git"
+  },
+  "keywords": [],
+  "author": "Kathrin Ulmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kathrin92/pokedex-list/issues"
+  },
+  "homepage": "https://github.com/Kathrin92/pokedex-list#readme"
+}
