@@ -1,5 +1,13 @@
-$body-color: blue;
+@use "./theme";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
 body {
-  color: $body-color;
+  margin: 0;
+  background-image: linear-gradient(to top right, #297383, #8bc5cd);
+  height: 100vh;
 }
