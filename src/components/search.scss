@@ -1,3 +1,12 @@
+@use "../theme";
+
 .search {
-  background: lightblue;
+  background: none;
+  border: dotted;
+  width: 150px;
+  padding-bottom: 5px;
+
+  &::placeholder {
+    color: lighten(rgb(26, 25, 25), 30%);
+  }
 }
