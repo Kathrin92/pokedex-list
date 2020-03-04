@@ -1,20 +1,11 @@
 import './app.scss';
-import { createElement, appendContent } from './lib/dom';
+import { createElement } from './lib/dom';
 import { createTitle } from './components/title';
 import { createSearchInput } from './components/search';
-import { createPokemons } from './components/pokemons';
+import { createSearchResults } from './components/pokemons';
 import Logo from './assets/pokeball.png';
-
-const allPokemons = ['Pikachu', 'Pichu', 'Shiggy', 'Glumanda', 'Bisasam'];
-
-function filterPokemons(searchValue) {
-  const lowerCaseSearchValue = searchValue.toLowerCase();
-
-  const filteredPokemons = allPokemons.filter(pokemon => {
-    return pokemon.toLowerCase().startsWith(lowerCaseSearchValue);
-  });
-  return filteredPokemons;
-}
+import { appendContent } from './lib/dom';
+import { filterPokemons } from './lib/pokemons';
 
 export function app() {
   const header = createElement('header', {
@@ -24,29 +15,32 @@ export function app() {
     className: 'main'
   });
   const title = createTitle('Pokedex-List');
-  const searchInput = createSearchInput('');
+  const searchInput = createSearchInput({
+    value: sessionStorage.getItem('searchValue')
+  });
   const logo = createElement('img', {
     className: 'logo',
     src: Logo
   });
 
-  let pokemons = null;
+  let searchResults = null;
   function setSearchResults() {
     const filteredPokemons = filterPokemons(searchInput.value);
-    pokemons = createPokemons(filteredPokemons);
-    appendContent(main, pokemons);
+    searchResults = createSearchResults({
+      items: filteredPokemons
+    });
+    appendContent(main, searchResults);
   }
   setSearchResults();
 
   appendContent(header, [logo, title]);
-  appendContent(main, [searchInput, pokemons]);
+  appendContent(main, [searchInput, searchResults]);
 
   searchInput.addEventListener('input', event => {
-    main.removeChild(pokemons);
+    main.removeChild(searchResults);
     setSearchResults();
 
     const searchValue = event.target.value;
-
     sessionStorage.setItem('searchValue', searchValue);
   });
 
