@@ -31,12 +31,10 @@ export function app() {
   searchInput.addEventListener('input', event => {
     main.removeChild(pokemons);
 
-    const searchValue = event.target.value;
-    //  const searchValue = event.target.value.toLowerCase();
+    const searchValue = event.target.value.toLowerCase();
     const filteredPokemons = allPokemons.filter(pokemon => {
-      return pokemon.toLowerCase().startsWith(searchValue.toLowerCase());
+      return pokemon.toLowerCase().includes(searchValue);
     });
-
     pokemons = createPokemons(filteredPokemons);
     main.appendChild(pokemons);
   });
