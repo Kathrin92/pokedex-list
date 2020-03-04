@@ -2,11 +2,13 @@
 
 .search {
   background: none;
-  border: dotted;
-  width: 150px;
-  padding-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid theme.$primary-color;
+  width: 140px;
+  padding-bottom: 4px;
+  text-align: center;
 
   &::placeholder {
-    color: lighten(rgb(26, 25, 25), 30%);
+    color: lighten(theme.$primary-color, 30%);
   }
 }

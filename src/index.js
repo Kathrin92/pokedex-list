@@ -1,10 +1,9 @@
 import './index.scss';
-import { app } from './app';
+import { app } from './app.js';
+import { appendContent } from './lib/dom';
 
 const elements = app();
-elements.forEach(element => {
-  document.body.appendChild(element);
-});
+appendContent(document.body, elements);
 
 //elements.forEach(document.body.appendChild);
 //* funktioniert genau so wie document.body.appendChild(element);

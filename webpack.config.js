@@ -27,6 +27,7 @@ module.exports = {
           // Translates CSS into CommonJS
           'css-loader',
           // Compiles Sass to CSS
+
           {
             loader: 'sass-loader',
             options: {
@@ -35,6 +36,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: ['file-loader']
       }
     ]
   }
