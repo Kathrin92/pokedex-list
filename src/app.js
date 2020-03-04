@@ -5,7 +5,7 @@ import { createSearchInput } from './components/search';
 import { createPokemons } from './components/pokemons';
 import Logo from './assets/pokeball.png';
 
-const allPokemons = ['Pikachu', 'Pichu', 'Marwinchu', 'Juliachu', 'Johannachu'];
+const allPokemons = ['Pikachu', 'Pichu', 'Shiggy', 'Glumanda', 'Bisasam'];
 
 export function app() {
   const header = createElement('header', {
@@ -32,8 +32,9 @@ export function app() {
     main.removeChild(pokemons);
 
     const searchValue = event.target.value;
+    //  const searchValue = event.target.value.toLowerCase();
     const filteredPokemons = allPokemons.filter(pokemon => {
-      return pokemon.startsWith(searchValue);
+      return pokemon.toLowerCase().startsWith(searchValue.toLowerCase());
     });
 
     pokemons = createPokemons(filteredPokemons);
