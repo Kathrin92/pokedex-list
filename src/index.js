@@ -1,5 +1,5 @@
 import './index.scss';
-import { app } from './app.js';
+import { app } from './app';
 import { appendContent } from './lib/dom';
 
 const elements = app();
