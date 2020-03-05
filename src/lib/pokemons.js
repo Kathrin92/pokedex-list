@@ -1,10 +1,8 @@
 const allPokemons = [
-  'Pikachu',
   'Pichu',
   'Schiggy',
   'Glumanda',
   'Bisasam',
-  'Turtok'
 ];
 
 export function filterPokemons(searchValue) {

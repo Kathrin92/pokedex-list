@@ -12,8 +12,22 @@ export function createSearchResults(props) {
       className: 'pokemon'
     });
     element.addEventListener('click', () => {
-      const favorites = [item];
-      localStorage.setItem('favorites', JSON.stringify(favorites));
+
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      // let favorites = JSON.parse(localStorage.getItem('favorites'));
+      // if (!favorites) {
+      //   favorites = [];
+      // }
+
+      if (!favorites.includes(item)) {
+        favorites.push(item);
+      } else {
+        const itemIndex = favorites.indexOf(item);
+        favorites.splice(itemIndex, 1);
+      }
+
+      const favoritesJSON = JSON.stringify(favorites);
+      localStorage.setItem('favorites', favoritesJSON);
     });
     appendContent(container, element);
   });
