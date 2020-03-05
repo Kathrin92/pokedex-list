@@ -24,7 +24,9 @@ export function app() {
     src: Logo
   });
 
-  const favorites = createFavorites();
+  const favorites = createFavorites({
+    items: ['Pikachu', 'Pichu', 'Shiggy', 'Glumanda', 'Bisasam']
+  });
 
   let searchResults = null;
   function setSearchResults() {
