@@ -6,7 +6,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .pokemon {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -14,8 +13,11 @@
   margin: 4px;
   border: 1px solid theme.$primary-color;
   padding: 4px;
+  height: 20px;
   border-radius: 0.25rem;
   background: rgb(243, 65, 65);
+  user-select: none;
+  cursor: pointer;
 
   &:hover {
     background: rgb(231, 210, 210);

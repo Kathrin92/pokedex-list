@@ -6,6 +6,7 @@ import { createSearchResults } from './components/pokemons';
 import Logo from './assets/pokeball.png';
 import { appendContent } from './lib/dom';
 import { filterPokemons } from './lib/pokemons';
+import { createFavorites } from './components/favorites';
 
 export function app() {
   const header = createElement('header', {
@@ -23,6 +24,10 @@ export function app() {
     src: Logo
   });
 
+  const favorites = createFavorites({
+    items: ['Pikachu', 'Pichu', 'Shiggy', 'Glumanda', 'Bisasam']
+  });
+
   let searchResults = null;
   function setSearchResults() {
     const filteredPokemons = filterPokemons(searchInput.value);
@@ -34,7 +39,7 @@ export function app() {
   setSearchResults();
 
   appendContent(header, [logo, title]);
-  appendContent(main, [searchInput, searchResults]);
+  appendContent(main, [searchInput, searchResults, favorites]);
 
   searchInput.addEventListener('input', event => {
     main.removeChild(searchResults);
